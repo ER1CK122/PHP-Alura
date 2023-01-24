@@ -5,13 +5,13 @@
   use alura\banco\modelo\Endereco;
   use alura\banco\modelo\Conta\Titular;
   use alura\banco\modelo\Cpf;
-  use alura\banco\modelo\Conta\Conta;
+  use alura\banco\modelo\conta\ContaCorrente;
 
-  $primeiroFuncionario = new Funcionario(new Cpf('123.123.123-01'), 'Junior', 'Motorista');
+  $primeiroFuncionario = new Funcionario(new Cpf('123.123.123-01'), 'Junior', 'Motorista', '2000');
   $endereco = new Endereco('Rio do sul', 'todos', 'logo ali', '2023');
-  $primeiraConta = new Conta(new Titular(new Cpf('100.442.459-04'), 'Erick', $endereco));
-  $segundaConta = new Conta(new Titular(new Cpf('123.123.123-87'), 'Jubileu', $endereco));
-  $terceiraConta = new Conta(new Titular(new Cpf('123.123.123-12'), 'Edgar', $endereco));
+  $primeiraConta = new ContaCorrente(new Titular(new Cpf('100.442.459-04'), 'Erick', $endereco));
+  $segundaConta = new ContaCorrente(new Titular(new Cpf('123.123.123-87'), 'Jubileu', $endereco));
+  $terceiraConta = new ContaCorrente(new Titular(new Cpf('123.123.123-12'), 'Edgar', $endereco));
 
   $primeiraConta->depositar(10000);
 
@@ -42,5 +42,5 @@
 
   unset($segundaConta);
   
-  echo Conta::recuperarNumeroContas();
+  echo ContaCorrente::recuperarNumeroContas();
 ?>
