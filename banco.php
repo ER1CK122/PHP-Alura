@@ -36,10 +36,6 @@
 
   echo "<br>";
 
-  echo $primeiroFuncionario->recuperarCargoFuncionario();
-
-  echo "<br>";
-
   unset($segundaConta);
   
   echo ContaCorrente::recuperarNumeroContas();
